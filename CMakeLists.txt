@@ -14,6 +14,27 @@ add_executable(GTA5_launcher
 # Link required libraries (Windows specific)
 if(WIN32)
     target_link_libraries(GTA5_launcher shell32)
+
+    # Make sure the RC compiler can find windows.h and verrsrc.h from the Windows SDK
+    # We include the source directory so icon.ico is found relative to the .rc file
+    set(CMAKE_RC_FLAGS "${CMAKE_RC_FLAGS} /I \"${CMAKE_SOURCE_DIR}\" /nologo")
+
+    # Also propagate Windows SDK include paths to the RC compiler
+    if(DEFINED CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION)
+        set(_SDK_VER "${CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION}")
+    elseif(DEFINED ENV{WindowsSDKVersion})
+        string(REGEX REPLACE "\\\\$" "" _SDK_VER "$ENV{WindowsSDKVersion}")
+    endif()
+
+    if(DEFINED _SDK_VER)
+        set(_SDK_INCLUDE "C:/Program Files (x86)/Windows Kits/10/Include/${_SDK_VER}")
+        if(EXISTS "${_SDK_INCLUDE}/um")
+            set(CMAKE_RC_FLAGS "${CMAKE_RC_FLAGS} /I \"${_SDK_INCLUDE}/um\" /I \"${_SDK_INCLUDE}/shared\"")
+        endif()
+    endif()
+    
+    # Add verbose output for debugging
+    set(CMAKE_RC_FLAGS "${CMAKE_RC_FLAGS} /v")
 endif()
 
 # Set output directory

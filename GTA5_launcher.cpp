@@ -38,7 +38,10 @@ int main() {
 
 // Run PlayGTAV.exe with proper launch arguments to start up Grand Theft Auto V, NOTE: this is for the legacy edition.
     // CreateProcessW requires a modifiable buffer, so we create a writable wstring
-    // Using the exact format requested: start "" "PlayGTAV.exe" -nobattleye %*
+ 
+    /* Please note that because this is the required launch method for this version,                         */
+    /* the way that it works will cause your browser and / or AV to panic and say "virus!!! virussss!!11!!1" */
+    /* There's likely no way to avoid this, sorry. I'll try my best tho. ~veeλnti<3                          */
     std::wstring commandLine = L"start \"\" \"PlayGTAV.exe\" -nobattleye %*";
     
     // Convert working directory to wide string
