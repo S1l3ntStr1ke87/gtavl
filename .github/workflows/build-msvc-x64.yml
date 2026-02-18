@@ -1,36 +1,41 @@
-name: MSVC Build (x64 Release)
+name: Build (MSVC x64)
 
 on:
   push:
+    branches: [" main "]
   pull_request:
+    branches: [" main "]
+  workflow_dispatch: 
 
 jobs:
   build:
+    name: MSVC x64 Release
     runs-on: windows-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup MSVC (x64)
-      uses: ilammy/msvc-dev-cmd@v1
-      with:
-        arch: x64
+      - name: Set up MSVC x64 environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
 
-    - name: Install Ninja
-      run: choco install ninja
+      - name: Install Ninja
+        uses: seanmiddleditch/gha-setup-ninja@v5
 
-    - name: Configure (CMake + Ninja)
-      run: >
-        cmake -B out/build/x64-Release
-        -G Ninja
-        -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - name: Configure with CMake (Ninja, Release)
+        run: |
+          cmake -S . -B out/build/x64-Release `
+            -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release
 
-    - name: Build
-      run: cmake --build out/build/x64-Release
+      - name: Build
+        run: cmake --build out/build/x64-Release --config Release
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: x64-Release
-        path: out/build/x64-Release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GTA5_launcher-x64
+          path: out/build/x64-Release/bin/GTA5_launcher.exe
+          if-no-files-found: error
