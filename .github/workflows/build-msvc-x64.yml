@@ -1,4 +1,4 @@
-name: Build GTA5_launcher
+name: Build GTA5 Launcher
 
 on:
   push:
