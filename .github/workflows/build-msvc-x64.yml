@@ -1,4 +1,4 @@
-name: Build (MSVC x64)
+name: Build GTA5_launcher
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: MSVC x64 Release
+    name: MSVC x64 GTA5_launcher
     runs-on: windows-latest
 
     steps:
