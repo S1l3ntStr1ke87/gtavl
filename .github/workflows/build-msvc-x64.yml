@@ -12,22 +12,25 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Add MSVC to PATH
+    - name: Setup MSVC (x64)
       uses: ilammy/msvc-dev-cmd@v1
       with:
         arch: x64
 
-    - name: Configure (CMake)
-      run: >
-        cmake -B build
-        -DCMAKE_BUILD_TYPE=Release
-        -A x64             # <-- generator platform change
+    - name: Install Ninja
+      run: choco install ninja
 
-    - name: Build (CMake)
-      run: cmake --build build --config Release
+    - name: Configure (CMake + Ninja)
+      run: >
+        cmake -B out/build/x64-Release
+        -G Ninja
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+    - name: Build
+      run: cmake --build out/build/x64-Release
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: build-x64
-        path: build/bin/Release/
+        name: x64-Release
+        path: out/build/x64-Release
