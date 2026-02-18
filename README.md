@@ -1,6 +1,6 @@
 # GTAVL
-Custom GTA 5 Leagcy Launcher to bypass the Rockstar Launcher DRM  
-ONLY WORKS ON GTA 5 LEAGCY I AM WORKING ON THE SHITTY NEW VERSION OF GTA5
+Custom GTA 5 L & E Launcher to bypass the Rockstar Launcher DRM  
+WHEN USING ENCHANCED USE THE PlayGTAV.exe
 
 # How to use
 Open the cracked version of GTA5's Folder Drop EXE from the release into the folder
