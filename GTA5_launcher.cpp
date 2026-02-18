@@ -42,7 +42,7 @@ int main() {
     /* Please note that because this is the required launch method for this version,                         */
     /* the way that it works will cause your browser and / or AV to panic and say "virus!!! virussss!!11!!1" */
     /* There's likely no way to avoid this, sorry. I'll try my best tho. ~veeλnti<3                          */
-    std::wstring commandLine = L"start \"\" \"PlayGTAV.exe\" -nobattleye %*";
+    std::wstring commandLine = L"\"\" \"PlayGTAV.exe\" -nobattleye %*";
     
     // Convert working directory to wide string
     std::wstring wExePath(exePath.begin(), exePath.end());
