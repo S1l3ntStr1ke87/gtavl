@@ -1,4 +1,4 @@
-name: Build (MSVC x64)
+name: Build (MSVC x64) 2
 
 on:
   push:
