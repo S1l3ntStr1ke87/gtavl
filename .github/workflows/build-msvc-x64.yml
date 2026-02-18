@@ -37,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: GTA5_launcher-x64
-          path: out/build/x64-Release/bin/PlayGTAV.exe
+          path: out/build/x64-Release/bin/GTA5_launcher.exe
           if-no-files-found: error
