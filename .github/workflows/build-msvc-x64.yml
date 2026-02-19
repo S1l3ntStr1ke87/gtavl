@@ -1,10 +1,10 @@
-name: Build GTA5 Launcher
+name: Build Launcher (Both)
 
 on:
   push:
     branches: ["**"]
   pull_request:
-    branches: [" main "]
+    branches: [" launcher "]
   workflow_dispatch: 
 
 jobs:
