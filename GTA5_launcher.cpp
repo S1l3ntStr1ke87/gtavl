@@ -36,7 +36,7 @@ int main() {
     STARTUPINFOW si = { sizeof(si) };
     PROCESS_INFORMATION pi;
 
-// Run PlayGTAV.exe with proper launch arguments to start up Grand Theft Auto V, NOTE: this is for the legacy edition.
+// Run PlayGTAV.exe with proper launch arguments to start up Grand Theft Auto V
     // CreateProcessW requires a modifiable buffer, so we create a writable wstring
  
     /* Please note that because this is the required launch method for this version,                         */
