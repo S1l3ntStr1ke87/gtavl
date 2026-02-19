@@ -4,7 +4,7 @@ on:
   push:
     branches: ["**"]
   pull_request:
-    branches: [" enchanced "]
+    branches: [" legacy "]
   workflow_dispatch: 
 
 jobs:
@@ -36,6 +36,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PlayGTAV-x64
+          name: PlayGTAV-Legacy-x64
           path: out/build/x64-Release/bin/PlayGTAV.exe
           if-no-files-found: error
