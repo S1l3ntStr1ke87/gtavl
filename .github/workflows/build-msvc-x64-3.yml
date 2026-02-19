@@ -1,4 +1,4 @@
-name: Build PlayGTAV
+name: Build PlayGTAV (Legacy)
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: MSVC x64 PlayGTAV.exe
+    name: MSVC x64 PlayGTAV.exe (Legacy)
     runs-on: windows-latest
 
     steps:
