@@ -2,7 +2,7 @@
 Custom GTA 5 L & E Launcher to bypass the Rockstar Launcher DRM  
 WHEN USING ENCHANCED USE THE PlayGTAV.exe
 
-# How to use
+## How to use
 Open the cracked version of GTA5's Folder Drop EXE from the release into the folder
 BOOM IT WORKS HOLY SHIT?!?! EPIC GAMER MOMENT
 
