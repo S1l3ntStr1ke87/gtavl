@@ -26,7 +26,7 @@ int WinMain(
 )
 //int main()
 {
-    std::string filename = "GTA5_Enhanced.exe"; /*only true change here to make it run*/
+    std::string filename = "GTA5.exe";
     STARTUPINFOA lpStartupInfo;
     PROCESS_INFORMATION lpProcessInfo;
 
